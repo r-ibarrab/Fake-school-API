@@ -10,14 +10,14 @@
     "express-async-errors": "^3.1.1",
     "mongoose": "^6.0.13"
   },
-  "name": "randomapi",
+  "name": "fakeSchoolAPI",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs","mongodb","express","javascript","api"],
+  "author": "Roberto Ibarra <r.ibarrabernal@outlook.com>",
   "license": "ISC",
-  "description": ""
+  "description": "API of a fake school"
 }
