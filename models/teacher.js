@@ -8,7 +8,6 @@ const studentSchema = mongoose.Schema({
     email:{
         type:String,
         required:[true,'Email must be provided'],
-        validate: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
     },
     password:{
         type:String,

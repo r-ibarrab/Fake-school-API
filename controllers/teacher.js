@@ -1,24 +1,35 @@
 const response = require('../network/response')
 const Teacher = require('../models/teacher')
 
-function list(req,res,next){
-    response.success(req,res)
+async function list(req,res){
+    const teachers = await Teacher.find({})
+    console.log(teachers)
+    response.success(req,res,teachers,200)
 }
 
-function get(req,res){
+async function get(req, res){
+    const teachers = await Teacher.find({_id:req.params.id})
+    console.log(teachers)
+    response.success(req,res,teachers,200)
+}
+
+async function create(req,res){
+    const teacher = await Teacher.create(req.body)
+    console.log(teacher)
+    response.success(req,res,teacher,201)
 
 }
 
-function create(req,res){
-
+async function remove(req,res){
+    const teacher = await Teacher.deleteOne({_id:req.params.id})
+    console.log(teacher)
+    response.success(req,res,teacher,200)
 }
 
-function remove(req,res){
-
-}
-
-function update(req,res){
-
+async function update(req,res){
+    const teacher = await Teacher.updateOne({_id:req.params.id},{...req.body})
+    console.log(teacher)
+    response.success(req,res,teacher,200)
 }
 
 
